@@ -59,7 +59,7 @@ test('Order Products', async ({ page }) => {
   await expect(page).toHaveURL(/.*inventory\.html/);
 
   //Finally click logout button to logout from the application after checking logout element is enabled/not
-  expect(await page.getByRole('button', { name: 'Open Menu' })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Open Menu' })).toBeEnabled();
   await page.getByRole('button', { name: 'Open Menu' }).click();
   await page.getByRole('link', { name: 'Logout' }).click();
   await page.waitForTimeout(5);
