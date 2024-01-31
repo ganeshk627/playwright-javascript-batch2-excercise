@@ -54,5 +54,44 @@ test(`Get Student by Name: ${STUDENT_NAME}`, async ({ request }) => {
 });
 
 
+test(`Create New Student`, async ({ request }) => {
+    const response = await request.post(`${URL}/students/`, {
+        data: {
+            id:  "13", 
+            name: "James",
+        },
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+    console.log(await response.json());
+
+    expect(response.status()).toBe(201);
+    expect(response.headers()['content-type']).toContain("application/json");
+    let data = await response.json();
+    expect(data.name).toStrictEqual('James');
+    expect(data.id).toStrictEqual('13');
+});
+
+test(`Updating New Student`, async ({ request }) => {
+    const response = await request.post(`${URL}/students/`, {
+        data: {
+            id:  "7", 
+            name: "James",
+        },
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+    console.log(await response.json());
+
+    expect(response.status()).toBe(200);
+    expect(response.headers()['content-type']).toContain("application/json");
+    let data = await response.json();
+    expect(data.name).toStrictEqual('James');
+    expect(data.id).toStrictEqual('13');
+});
+
+
 
 
