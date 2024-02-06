@@ -2,9 +2,12 @@
 import { expect, test } from '@playwright/test'
 
 
-test('i. Single Select Dropdown', async ({ page }) => {
+test('Mouse Actions - Hover', async ({ page }) => {
 
-    await page.goto('https://www.letskodeit.com/practice');
+    await page.goto('https://demo.opencart.com/');
+    await page.locator('//a[normalize-space()="Laptops & Notebooks"]').hover();
+    await page.locator('')
+
 
     
 });
