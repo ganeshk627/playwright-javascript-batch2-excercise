@@ -33,6 +33,7 @@ module.exports = defineConfig({
       args: ["--start-maximized"],
       slowMo: 1000,
     },
+    screenshot: 'on',
   },
 
   timeout: 90 * 1000, // timeout for individual tests
