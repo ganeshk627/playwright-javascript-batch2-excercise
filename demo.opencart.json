@@ -1,0 +1,15 @@
+[
+  {
+      "domain": "demo.opencart.com",
+      "expirationDate": 1741842053.698444,
+      "hostOnly": true,
+      "httpOnly": false,
+      "name": "OCSESSID",
+      "path": "/",
+      "sameSite": "strict",
+      "secure": true,
+      "session": false,
+      "storeId": null,
+      "value": "5b2b3f3812405639cac572ef0e"
+  }
+]
