@@ -77,6 +77,6 @@ test('Web Tables', async ({ page }) => {
     } 
 
     await page.waitForTimeout(3000);
-    // await page.pause();
+    await page.pause();
 
 });
