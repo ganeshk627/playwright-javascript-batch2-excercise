@@ -21,8 +21,9 @@ test('Multiple file upload', async ({ page }) => {
 
     const filesToUpload = ['upload1.png', 'upload2.png'];
 
+    const count =2;
     await page.locator('#filesToUpload').setInputFiles(filesToUpload).then(async () => {
-        await expect(page.locator('#fileList li')).toHaveCount(2);
+        await expect(page.locator('#fileList li'), `File should have count ${count}`).toHaveCount(count);
     });
 
 });
