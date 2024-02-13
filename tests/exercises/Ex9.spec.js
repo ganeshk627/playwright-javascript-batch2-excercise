@@ -1,6 +1,7 @@
 // @ts-check
 import { expect, test } from '@playwright/test'
 
+test.use({ browserName: 'firefox' });
 
 test('Iframes', async ({ page }) => {
 
