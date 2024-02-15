@@ -1,0 +1,26 @@
+{
+    "users":[
+        {
+            "username":"sukumar1991",
+            "password":"123"
+        },
+        {
+            "username":"sukumar1991",
+            "password":"123"
+        },
+        {
+            "username":"sukumar1991",
+            "password":"123"
+        }
+    ],
+    "products":[
+        {
+            "productId":"P001",
+            "productName":"pencil"
+        },
+        {
+            "productId":"P002",
+            "productName":"pen"
+        }
+    ]
+}
