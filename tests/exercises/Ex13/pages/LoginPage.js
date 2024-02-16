@@ -3,13 +3,9 @@ exports.LoginPage = class LoginPage {
 
   constructor(page) {
     this.page = page;
-    this.logoLocator = '.app_logo';
     this.usernameInput = '//input[@id="user-name"]';
     this.passwordInput = '#password';
     this.loginButton = 'id=login-button';
-    this.welcomeMessage = '.menu_text';
-    this.logoutLink = 'a[title="Logout"]';
-    this.continueLink = 'a[title="Continue"]';
   }
 
   async gotoLoginPage() {
