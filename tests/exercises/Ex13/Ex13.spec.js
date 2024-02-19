@@ -106,6 +106,7 @@ test('Page Object model pattern', async ({ page }) => { // Start of a test case
         await headerPage.openMenu();
         await expect(page.locator(sidebarpage.logout_button), `Logout button should be enabled!!!`).toBeEnabled();
         await sidebarpage.clickLogout();
+        await expect(page).toHaveURL('https://www.saucedemo.com/')
     });
 
 });
