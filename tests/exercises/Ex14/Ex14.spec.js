@@ -87,5 +87,32 @@ test('Data Driven Test - JSON', async ({ page }) => { // Start of a test case
         // Code to check if next button is enabled
         // Code to click on next button
     });
+    
+    await test.step('xi. Fill the billing and shipping address by reading the details from excel/db/json file and before filling check the element is enabled/not and after filling ensure that you have entered correct data', async () => {
+        // Code to read billing and shipping address details from external source (e.g., Excel, DB, JSON)
+        // Code to check if billing and shipping address fields are enabled
+        // Code to fill the billing and shipping address fields
+        // Code to verify that the entered billing and shipping address data is correct
+    });
 
+    test.step('xii. Select the payment type, fill necessary details and click submit after checking the field is enabled/not', async () => {
+        // - Select the payment type
+        // - Fill necessary payment details
+        // - Check if the submit button is enabled
+        // - Click the submit button if enabled
+    });
+    
+    test.step('xiii. Verify the successful order message ‘Thank you for placing an order with ACME! ’', async () => {
+        // - Verify the presence of the successful order message
+    });
+    
+    test.step('xiv. Finally click logout button to logout from the application after checking logout element is enabled/not', async () => {
+        // - Check if the logout button is enabled
+        // - Click the logout button if enabled
+    });
+    
+    test.step('xv. Do a page level testing to ensure that you landed up in a login page.', async () => {
+        // - Check if the current page is the login page
+    });
+    
 });
