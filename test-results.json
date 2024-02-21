@@ -1,0 +1,232 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\ganesh.kannan\\projects\\playwright-batch2\\playwright.config.js",
+    "rootDir": "C:/Users/ganesh.kannan/projects/playwright-batch2/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results.xml"
+        }
+      ],
+      [
+        "C:\\Users\\ganesh.kannan\\projects\\playwright-batch2\\node_modules\\allure-playwright\\dist\\index.js",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/ganesh.kannan/projects/playwright-batch2/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/ganesh.kannan/projects/playwright-batch2/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.41.1",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "exercises\\Ex14\\Ex14.spec.js",
+      "file": "exercises/Ex14/Ex14.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Data Driven Test - JSON",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 33459,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "The Order ID is:  Order #533651\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "i. Launch the Page",
+                      "duration": 3822
+                    },
+                    {
+                      "title": "ii. Enter the username after checking the field is enabled/not and check whether username entered is correct or not",
+                      "duration": 1137
+                    },
+                    {
+                      "title": "iii. Enter the password after checking the field is enabled/not and check whether password entered is correct or not",
+                      "duration": 1130
+                    },
+                    {
+                      "title": "iv. Press login after checking the field is enabled/not",
+                      "duration": 1481
+                    },
+                    {
+                      "title": "v. Verify the new Page Url contains https://training.openspan.com/home",
+                      "duration": 46
+                    },
+                    {
+                      "title": "vi. Check whether you have logged in with correct username in the navigated page",
+                      "duration": 29
+                    },
+                    {
+                      "title": "vii. Check the number of product types and products of each category",
+                      "duration": 25
+                    },
+                    {
+                      "title": "viii. Select product type and product name and click on view details after checking the field is enabled/not",
+                      "duration": 3583
+                    },
+                    {
+                      "title": "ix. Select the Quantity and make an order and repeat the process of ordering based on requirements",
+                      "duration": 1899
+                    },
+                    {
+                      "title": "x. Click on cart menu and place your order by clicking next button after checking the field is enabled/not",
+                      "duration": 2131
+                    },
+                    {
+                      "title": "xi. Fill the billing and shipping address by reading the details from excel/db/json file and before filling check the element is enabled/not and after filling ensure that you have entered correct data",
+                      "duration": 9323
+                    },
+                    {
+                      "title": "xii. Select the payment type, fill necessary details and click submit after checking the field is enabled/not",
+                      "duration": 4181
+                    },
+                    {
+                      "title": "xiii. Verify the successful order message ‘Thank you for placing an order with ACME! ’",
+                      "duration": 27
+                    },
+                    {
+                      "title": "xiv. Finally click logout button to logout from the application after checking logout element is enabled/not",
+                      "duration": 2787
+                    },
+                    {
+                      "title": "xv. Do a page level testing to ensure that you landed up in a login page.",
+                      "duration": 15
+                    }
+                  ],
+                  "startTime": "2024-02-21T10:37:30.894Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\ganesh.kannan\\projects\\playwright-batch2\\test-results\\exercises-Ex14-Ex14-Data-Driven-Test---JSON-chromium\\test-finished-1.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7b3a922d65d21bb22d9e-1aef059fb447d5800188",
+          "file": "exercises/Ex14/Ex14.spec.js",
+          "line": 9,
+          "column": 5
+        },
+        {
+          "title": "test",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip"
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-02-21T10:37:29.690Z",
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "7b3a922d65d21bb22d9e-7199224485bfe448a6cc",
+          "file": "exercises/Ex14/Ex14.spec.js",
+          "line": 149,
+          "column": 6
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-02-21T10:37:29.518Z",
+    "duration": 38140.664000000004,
+    "expected": 1,
+    "skipped": 1,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

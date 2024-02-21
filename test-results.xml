@@ -1,0 +1,20 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="1" errors="0" time="38.111158">
+<testsuite name="exercises\Ex14\Ex14.spec.js" timestamp="2024-02-21T10:37:29.687Z" hostname="chromium" tests="2" failures="0" skipped="1" time="33.459" errors="0">
+<testcase name="Data Driven Test - JSON" classname="exercises\Ex14\Ex14.spec.js" time="33.459">
+<system-out>
+<![CDATA[The Order ID is:  Order #533651
+
+[[ATTACHMENT|test-results\exercises-Ex14-Ex14-Data-Driven-Test---JSON-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="test" classname="exercises\Ex14\Ex14.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
