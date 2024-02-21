@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\ganesh.kannan\\projects\\playwright-batch2\\playwright.config.js",
-    "rootDir": "C:/Users/ganesh.kannan/projects/playwright-batch2/tests",
+    "configFile": "/Users/ganeshk/Automation Testing/Automation Testing/workdone/VSCode/playwright-javascript-batch2-excercise/playwright.config.js",
+    "rootDir": "/Users/ganeshk/Automation Testing/Automation Testing/workdone/VSCode/playwright-javascript-batch2-excercise/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -40,7 +40,7 @@
         }
       ],
       [
-        "C:\\Users\\ganesh.kannan\\projects\\playwright-batch2\\node_modules\\allure-playwright\\dist\\index.js",
+        "/Users/ganeshk/Automation Testing/Automation Testing/workdone/VSCode/playwright-javascript-batch2-excercise/node_modules/allure-playwright/dist/index.js",
         null
       ]
     ],
@@ -51,12 +51,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/ganesh.kannan/projects/playwright-batch2/test-results",
+        "outputDir": "/Users/ganeshk/Automation Testing/Automation Testing/workdone/VSCode/playwright-javascript-batch2-excercise/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chromium",
         "name": "chromium",
-        "testDir": "C:/Users/ganesh.kannan/projects/playwright-batch2/tests",
+        "testDir": "/Users/ganeshk/Automation Testing/Automation Testing/workdone/VSCode/playwright-javascript-batch2-excercise/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -67,12 +67,12 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.41.1",
-    "workers": 6,
+    "workers": 4,
     "webServer": null
   },
   "suites": [
     {
-      "title": "exercises\\Ex14\\Ex14.spec.js",
+      "title": "exercises/Ex14/Ex14.spec.js",
       "file": "exercises/Ex14/Ex14.spec.js",
       "column": 0,
       "line": 0,
@@ -92,11 +92,11 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 33459,
+                  "duration": 35979,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "The Order ID is:  Order #533651\n"
+                      "text": "The Order ID is:  Order #533654\n"
                     }
                   ],
                   "stderr": [],
@@ -104,71 +104,71 @@
                   "steps": [
                     {
                       "title": "i. Launch the Page",
-                      "duration": 3822
+                      "duration": 2209
                     },
                     {
                       "title": "ii. Enter the username after checking the field is enabled/not and check whether username entered is correct or not",
-                      "duration": 1137
+                      "duration": 1080
                     },
                     {
                       "title": "iii. Enter the password after checking the field is enabled/not and check whether password entered is correct or not",
-                      "duration": 1130
+                      "duration": 1088
                     },
                     {
                       "title": "iv. Press login after checking the field is enabled/not",
-                      "duration": 1481
+                      "duration": 1476
                     },
                     {
                       "title": "v. Verify the new Page Url contains https://training.openspan.com/home",
-                      "duration": 46
+                      "duration": 8
                     },
                     {
                       "title": "vi. Check whether you have logged in with correct username in the navigated page",
-                      "duration": 29
+                      "duration": 3
                     },
                     {
                       "title": "vii. Check the number of product types and products of each category",
-                      "duration": 25
+                      "duration": 5
                     },
                     {
                       "title": "viii. Select product type and product name and click on view details after checking the field is enabled/not",
-                      "duration": 3583
+                      "duration": 3460
                     },
                     {
                       "title": "ix. Select the Quantity and make an order and repeat the process of ordering based on requirements",
-                      "duration": 1899
+                      "duration": 1860
                     },
                     {
                       "title": "x. Click on cart menu and place your order by clicking next button after checking the field is enabled/not",
-                      "duration": 2131
+                      "duration": 2097
                     },
                     {
                       "title": "xi. Fill the billing and shipping address by reading the details from excel/db/json file and before filling check the element is enabled/not and after filling ensure that you have entered correct data",
-                      "duration": 9323
+                      "duration": 9220
                     },
                     {
                       "title": "xii. Select the payment type, fill necessary details and click submit after checking the field is enabled/not",
-                      "duration": 4181
+                      "duration": 3708
                     },
                     {
                       "title": "xiii. Verify the successful order message ‘Thank you for placing an order with ACME! ’",
-                      "duration": 27
+                      "duration": 24
                     },
                     {
                       "title": "xiv. Finally click logout button to logout from the application after checking logout element is enabled/not",
-                      "duration": 2787
+                      "duration": 9298
                     },
                     {
                       "title": "xv. Do a page level testing to ensure that you landed up in a login page.",
-                      "duration": 15
+                      "duration": 19
                     }
                   ],
-                  "startTime": "2024-02-21T10:37:30.894Z",
+                  "startTime": "2024-02-21T10:48:48.747Z",
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\ganesh.kannan\\projects\\playwright-batch2\\test-results\\exercises-Ex14-Ex14-Data-Driven-Test---JSON-chromium\\test-finished-1.png"
+                      "path": "/Users/ganeshk/Automation Testing/Automation Testing/workdone/VSCode/playwright-javascript-batch2-excercise/test-results/exercises-Ex14-Ex14-Data-Driven-Test---JSON-chromium/test-finished-1.png"
                     }
                   ]
                 }
@@ -176,7 +176,7 @@
               "status": "expected"
             }
           ],
-          "id": "7b3a922d65d21bb22d9e-1aef059fb447d5800188",
+          "id": "7b3a922d65d21bb22d9e-5b9930b164cf2cc4b154",
           "file": "exercises/Ex14/Ex14.spec.js",
           "line": 9,
           "column": 5
@@ -205,14 +205,14 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-02-21T10:37:29.690Z",
+                  "startTime": "2024-02-21T10:48:48.586Z",
                   "attachments": []
                 }
               ],
               "status": "skipped"
             }
           ],
-          "id": "7b3a922d65d21bb22d9e-7199224485bfe448a6cc",
+          "id": "7b3a922d65d21bb22d9e-3fb1d3c284f459e36515",
           "file": "exercises/Ex14/Ex14.spec.js",
           "line": 149,
           "column": 6
@@ -222,8 +222,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-02-21T10:37:29.518Z",
-    "duration": 38140.664000000004,
+    "startTime": "2024-02-21T10:48:48.558Z",
+    "duration": 36554.277,
     "expected": 1,
     "skipped": 1,
     "unexpected": 0,
