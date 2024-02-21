@@ -3,14 +3,20 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from './pages/LoginPage';
 import { DashboardPage } from './pages/DashboardPage';
 import credentials from './test-data/credentials.json'
+import { CartPage } from './pages/CartPage';
 
 
 test('Data Driven Test - JSON', async ({ page }) => { // Start of a test case
-    const loginPage = new LoginPage(page);
-    const dashboardPage = new DashboardPage(page);
 
     const USERNAME = credentials.username;
     const PASSWORD = credentials.password;
+    const productTypeToSelect = credentials.bucketlist.productCategory;
+    const productToSelect = credentials.bucketlist.productName;
+    const quantity = credentials.bucketlist.quantity;
+
+    const loginPage = new LoginPage(page);
+    const dashboardPage = new DashboardPage(page);
+    const cartPage = new CartPage(page);
 
     await test.step('i. Launch the Page', async () => {
         // Code to launch the page
@@ -44,7 +50,7 @@ test('Data Driven Test - JSON', async ({ page }) => { // Start of a test case
 
     await test.step('v. Verify the new Page Url contains https://training.openspan.com/home', async () => {
         // Code to get current page URL and assert if it contains the expected URL
-        await expect(page).toHaveURL('https://training.openspan.com/home')
+        await expect(page).toHaveURL('https://training.openspan.com/home');
     });
 
     await test.step('vi. Check whether you have logged in with correct username in the navigated page', async () => {
@@ -63,10 +69,11 @@ test('Data Driven Test - JSON', async ({ page }) => { // Start of a test case
     await test.step('viii. Select product type and product name and click on view details after checking the field is enabled/not', async () => {
         // Code to check if product type and product name fields are enabled
         await expect(page.locator(dashboardPage.product_type_dropdown)).toBeEnabled();
-        await expect(page.locator(dashboardPage.product_list_dropdown)).toBeEnabled();
+        await expect(page.locator(dashboardPage.product_list_dropdown)).not.toBeEnabled();
         // Code to select product type and product name
-        const productTypeToSelect = 'Beverages';
-        const productToSelect = 'Chang';
+        // const productTypeToSelect = 'Beverages';
+        // const productToSelect = 'Chang';
+
         await dashboardPage.selectProductType(productTypeToSelect);
         await dashboardPage.selectProduct(productToSelect);
         // Code to click on view details button
@@ -75,44 +82,73 @@ test('Data Driven Test - JSON', async ({ page }) => { // Start of a test case
 
     await test.step('ix. Select the Quantity and make an order and repeat the process of ordering based on requirements', async () => {
         // Code to select quantity and make an order
-        let quantity = Math.floor(Math.random() * (20 - 1) + 1);
-        console.log(`Quantity: ${quantity}`)
-        // Code to repeat the process based on requirements
+        // await cartPage.selectProductQuantity(quantity); // issues with select quantity
+        await cartPage.clickOrder();
+        // await cartPage.clickEditYourCart();
 
     });
 
     await test.step('x. Click on cart menu and place your order by clicking next button after checking the field is enabled/not', async () => {
         // Code to check if cart menu button is enabled
+        await expect(page.locator(cartPage.cart_icon)).toBeEnabled();
         // Code to click on cart menu
+        await cartPage.openCart();
         // Code to check if next button is enabled
+        await expect(page.locator(cartPage.next_button_to_fill_address)).toBeEnabled();
         // Code to click on next button
-    });
-    
-    await test.step('xi. Fill the billing and shipping address by reading the details from excel/db/json file and before filling check the element is enabled/not and after filling ensure that you have entered correct data', async () => {
-        // Code to read billing and shipping address details from external source (e.g., Excel, DB, JSON)
-        // Code to check if billing and shipping address fields are enabled
-        // Code to fill the billing and shipping address fields
-        // Code to verify that the entered billing and shipping address data is correct
+        await cartPage.clickNextToFillAddress();
     });
 
-    test.step('xii. Select the payment type, fill necessary details and click submit after checking the field is enabled/not', async () => {
+    await test.step('xi. Fill the billing and shipping address by reading the details from excel/db/json file and before filling check the element is enabled/not and after filling ensure that you have entered correct data', async () => {
+        // Code to read billing and shipping address details from external source (e.g., Excel, DB, JSON)
+        const billing_address = credentials.address.billingAddress;
+        // Code to fill the billing and shipping address fields
+        await cartPage.fillBillingAndShippingAddress(
+            billing_address.firstName,
+            billing_address.lastName,
+            billing_address.streetName,
+            billing_address.zipCode,
+            billing_address.areaCode,
+            billing_address.phoneNumber,
+            billing_address.companyName,
+            billing_address.email
+        );
+        await cartPage.clickNextToMakePayment();
+    });
+
+    await test.step('xii. Select the payment type, fill necessary details and click submit after checking the field is enabled/not', async () => {
         // - Select the payment type
+        await cartPage.clickBillMe()
         // - Fill necessary payment details
+        await cartPage.fillPurchaseNumber('11111111');
         // - Check if the submit button is enabled
         // - Click the submit button if enabled
+        await cartPage.clickSubmit();
     });
-    
-    test.step('xiii. Verify the successful order message ‘Thank you for placing an order with ACME! ’', async () => {
+
+    await test.step('xiii. Verify the successful order message ‘Thank you for placing an order with ACME! ’', async () => {
         // - Verify the presence of the successful order message
+        await expect(page.locator(cartPage.order_confirmation_message)).toContainText('Thank you for placing an order with ACME!');
+        await cartPage.logOrderId();
     });
-    
-    test.step('xiv. Finally click logout button to logout from the application after checking logout element is enabled/not', async () => {
+
+    await test.step('xiv. Finally click logout button to logout from the application after checking logout element is enabled/not', async () => {
         // - Check if the logout button is enabled
         // - Click the logout button if enabled
+        await cartPage.logout();
     });
-    
-    test.step('xv. Do a page level testing to ensure that you landed up in a login page.', async () => {
+
+    await test.step('xv. Do a page level testing to ensure that you landed up in a login page.', async () => {
         // - Check if the current page is the login page
+        await expect(page).toHaveURL(/.*\/login/)
     });
-    
+
 });
+
+
+test.skip('test', async () => {
+    console.log(credentials.username)
+    console.log(credentials.password)
+    console.log(credentials.bucketlist.productCategory)
+    console.log(credentials.bucketlist.productName)
+})

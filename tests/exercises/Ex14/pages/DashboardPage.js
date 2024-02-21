@@ -9,8 +9,6 @@ exports.DashboardPage = class DashboardPage {
       this.product_list_dropdown = '#productsList';
       this.product_lists = '#productsList option';
       this.view_button = 'input#viewButton';
-      this.product_quantity = '.product_quantity';
-      this.order_button = 'input[name="Order"]';
     }
 
     async selectProductType(productType) {
@@ -23,18 +21,7 @@ exports.DashboardPage = class DashboardPage {
 
     async clickViewDetails() {
       await this.page.locator(this.view_button).click();
-    }
-
-    async selectProductQuantity(quantity){
-      await this.page.locator(this.product_quantity).selectOption({'label': quantity})
-    }
-
-    async clickOrder() {
-      await this.page.locator(this.order_button).click();
-    }
-
-
-  
+    }  
     
   };
   
